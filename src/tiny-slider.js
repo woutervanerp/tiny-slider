@@ -1862,7 +1862,7 @@ export var tns = function(options) {
 
     // check image classes
     imgs.forEach(function (img, index) {
-      if (!lazyload && img.complete) { imgCompleted(img); } // Check image.complete
+      if (!lazyload || img.complete) { imgCompleted(img); } // Check image.complete
       if (hasClass(img, imgCompleteClass)) { imgs.splice(index, 1); }
     });
 
